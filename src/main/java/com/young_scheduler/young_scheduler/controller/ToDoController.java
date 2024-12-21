@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/todo") // API 엔드포인트를 명확히 정의
 public class ToDoController {
 
     @Autowired
