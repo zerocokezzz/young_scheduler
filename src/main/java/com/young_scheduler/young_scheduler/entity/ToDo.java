@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class ToDo {
 
     @Id
@@ -32,10 +33,10 @@ public class ToDo {
     @Column(columnDefinition = "TEXT")
     private String discription; // NULL 허용
 
-    @Column(nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Column(nullable = false)
     private LocalDateTime updatedAt;
 
     @PrePersist
@@ -48,4 +49,5 @@ public class ToDo {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
+
 }
