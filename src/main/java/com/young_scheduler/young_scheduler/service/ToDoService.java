@@ -6,9 +6,12 @@ import com.young_scheduler.young_scheduler.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ToDoService {
@@ -27,7 +30,7 @@ public class ToDoService {
                 .title(toDoDTO.getTitle())
                 .date(toDoDTO.getDate())
                 .time(toDoDTO.getTime())
-                .discription(toDoDTO.getDescription())
+                .description(toDoDTO.getDescription())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .build();
@@ -58,7 +61,7 @@ public class ToDoService {
         existingToDo.setTitle(toDoDTO.getTitle());
         existingToDo.setDate(toDoDTO.getDate());
         existingToDo.setTime(toDoDTO.getTime());
-        existingToDo.setDiscription(toDoDTO.getDescription());
+        existingToDo.setDescription(toDoDTO.getDescription());
         existingToDo.setUpdatedAt(java.time.LocalDateTime.now());
 
         // 저장
@@ -97,6 +100,20 @@ public class ToDoService {
      */
     public List<ToDo> getAllToDos() {
         return toDoRepository.findAll();
+    }
+
+    public Map<String, Long> getTodoCountByDate(int year, int month) {
+        LocalDate startDate = LocalDate.of(year, month, 1);
+        LocalDate endDate = startDate.withDayOfMonth(startDate.lengthOfMonth());
+
+        List<ToDo> todos = toDoRepository.findAllByDateBetween(startDate, endDate);
+
+        // 날짜별 할 일 개수 계산
+        return todos.stream()
+                .collect(Collectors.groupingBy(
+                        todo -> todo.getDate().toString(), // 날짜를 문자열로 변환
+                        Collectors.counting()
+                ));
     }
 
 }

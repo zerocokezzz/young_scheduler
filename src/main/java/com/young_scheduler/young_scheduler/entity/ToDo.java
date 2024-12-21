@@ -31,7 +31,7 @@ public class ToDo {
     private LocalTime time; // NULL 허용
 
     @Column(columnDefinition = "TEXT")
-    private String discription; // NULL 허용
+    private String description; // NULL 허용
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;

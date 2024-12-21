@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/todo") // API 엔드포인트를 명확히 정의
+@RequestMapping("/api/todo") // 공통 URL 경로
 public class ToDoController {
 
     @Autowired
@@ -69,6 +70,15 @@ public class ToDoController {
     public ResponseEntity<List<ToDo>> getAllToDos() {
         List<ToDo> toDoList = toDoService.getAllToDos();
         return ResponseEntity.ok(toDoList);
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Map<String, Long>> getTodoCount(
+            @RequestParam int year,
+            @RequestParam int month
+    ) {
+        Map<String, Long> todoCountByDate = toDoService.getTodoCountByDate(year, month);
+        return ResponseEntity.ok(todoCountByDate);
     }
 
 }
