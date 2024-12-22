@@ -6,10 +6,10 @@ const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
 /***** Pages ****/
 
-const ToDoForm = lazy(() => import("../components/ToDoForm.js"));
-const ToDoList = lazy(() => import("../components/ToDoList.js"))
-const ToDoDetails = lazy(() => import("../components/ToDoDetails.js"))
-const ToDoUpdate = lazy(() => import("../components/ToDoUpdate.js"))
+const ToDoForm = lazy(() => import("../pages/ToDoForm.js"));
+const ToDoList = lazy(() => import("../pages/ToDoList.js"))
+const ToDoDetails = lazy(() => import("../pages/ToDoDetails.js"))
+const ToDoUpdate = lazy(() => import("../pages/ToDoUpdate.js"))
 
 /*****Routes******/
 

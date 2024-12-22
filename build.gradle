@@ -1,40 +1,73 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.3.7'
-	id 'io.spring.dependency-management' version '1.1.7'
+	id 'java' // Java 플러그인
+	id 'org.springframework.boot' version '3.3.7' // Spring Boot 플러그인
+	id 'io.spring.dependency-management' version '1.1.7' // Spring Dependency Management 플러그인
 }
 
-group = 'com.young_scheduler'
-version = '0.0.1-SNAPSHOT'
+group = 'com.young_scheduler' // 프로젝트 그룹 ID
+version = '0.0.1-SNAPSHOT' // 프로젝트 버전
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(17) // Java 17 사용
 	}
 }
 
 configurations {
 	compileOnly {
-		extendsFrom annotationProcessor
+		extendsFrom annotationProcessor // Lombok 등 애노테이션 프로세서 지원 확장
 	}
 }
 
 repositories {
-	mavenCentral()
+	mavenCentral() // Maven Central 리포지토리 사용
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'org.springdoc', name: 'springdoc-openapi-starter-webmvc-ui', version: '2.6.0'
+	// Spring Boot 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA
+	implementation 'org.springframework.boot:spring-boot-starter-web' // Spring Web
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+	// Lombok (컴파일 타임/애노테이션 프로세싱)
 	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.mysql:mysql-connector-j'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// Spring Boot 개발 도구 (핫 리로드 등)
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	// MySQL JDBC 드라이버
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// 테스트 의존성
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 플랫폼 런처
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+	useJUnitPlatform() // JUnit 5 플랫폼 사용
+}
+
+sourceSets {
+	main {
+		java {
+			// 메인 Java 소스 디렉토리 (backend/java로 변경)
+			srcDirs = ['src/main/backend/java']
+		}
+		resources {
+			// 메인 리소스 디렉토리 (backend/resources로 변경)
+			srcDirs = ['src/main/backend/resources']
+		}
+	}
+	test {
+		java {
+			// 테스트 Java 소스 디렉토리
+			srcDirs = ['src/test/backend/java']
+		}
+		resources {
+			// 테스트 리소스 디렉토리
+			srcDirs = ['src/test/backend/resources']
+		}
+	}
 }

@@ -69,7 +69,11 @@ const CalendarTable = ({ year, month, onDateClick }) => {
             <Button color="primary" onClick={() => onDateClick("prev")}>
               &lt; 이전 달
             </Button>
-            <CardTitle tag="h5">
+            <CardTitle
+                tag="h5"
+                className="clickable-title"
+                onClick={() => onDateClick(null)} // 클릭 시 selectedDate를 초기화
+            >
               {year}년 {month + 1}월
             </CardTitle>
             <Button color="primary" onClick={() => onDateClick("next")}>
@@ -90,17 +94,26 @@ const CalendarTable = ({ year, month, onDateClick }) => {
             {calendarDays.map((week, weekIndex) => (
                 <tr key={weekIndex}>
                   {week.map((date, dayIndex) => {
-                    const formattedDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(
-                        date.day
-                    ).padStart(2, "0")}`;
+                    const formattedDate = `${year}-${String(month + 1).padStart(
+                        2,
+                        "0"
+                    )}-${String(date.day).padStart(2, "0")}`;
                     const isWeekend = dayIndex === 0 || dayIndex === 6;
                     return (
                         <td
                             key={dayIndex}
-                            className={`calendar-cell ${!date.isCurrentMonth ? "disabled" : ""} ${
-                                isWeekend ? (dayIndex === 0 ? "sunday" : "saturday") : ""
+                            className={`calendar-cell ${
+                                !date.isCurrentMonth ? "disabled" : ""
+                            } ${
+                                isWeekend
+                                    ? dayIndex === 0
+                                        ? "sunday"
+                                        : "saturday"
+                                    : ""
                             }`}
-                            onClick={() => date.isCurrentMonth && onDateClick(formattedDate)}
+                            onClick={() =>
+                                date.isCurrentMonth && onDateClick(formattedDate)
+                            }
                         >
                           {date.day}
                           {date.isCurrentMonth && todoCount[formattedDate] && (
