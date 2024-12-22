@@ -15,10 +15,12 @@
 - **날짜별 일정 확인:** 달력에서 각 날짜에 대한 일정을 확인하고, 상세 보기 및 삭제가 가능합니다.
 - **월별 일정 확인:** 달력에서 각 월에 대한 **[이전 달]**, **[다음 달]** 버튼을 통해 이동하여 확인 가능하며, 상세보기나 날짜별 확인 후 **[x년x월]** 클릭 시 해당 월의 전체 일정을 볼 수 있습니다.
 - **기본적인 CRUD 기능:** 일정 데이터는 백엔드에서 관리되며, **React**와 **Spring Boot**를 사용하여 프론트엔드와 백엔드를 분리하여 개발하였습니다.
-![웹_list](https://github.com/user-attachments/assets/73da1e6d-2397-4228-a543-842152ba3a37)
-![웹_일자별](https://github.com/user-attachments/assets/5289892f-08b5-4b3e-a610-bf3614c2848f)
-![웹_다음달](https://github.com/user-attachments/assets/1389c720-08b8-48fe-9e1d-420b80ddd77b)
-![웹_create](https://github.com/user-attachments/assets/2febb42f-8655-4785-9a17-d2455e3b4776)
+
+![웹_list](https://github.com/user-attachments/assets/bdc95e31-d44b-4038-8665-07eba598b0a1)
+![웹_detail](https://github.com/user-attachments/assets/d1e38cee-2bbd-47c4-bc98-955427c1da0b)
+![웹_일자별](https://github.com/user-attachments/assets/215bb052-420e-482c-a574-e33573781a05)
+![웹_다음달](https://github.com/user-attachments/assets/d84eb024-bd24-4dfe-b90a-0636e883b995)
+![웹_create](https://github.com/user-attachments/assets/0ef7f6f1-64a1-4815-a3d6-7250ea3ab306)
 
 
 ---
@@ -74,8 +76,7 @@ Swagger UI를 통해 [http://localhost:8080/swagger-ui/index.html](http://localh
 - **GET /api/todo**: 모든 할 일 목록을 반환합니다.
 - **GET /api/todo/count**: 특정 월의 날짜별 할 일 개수를 반환합니다.
 
-![swagger_ui](https://github.com/user-attachments/assets/68f63dfa-7785-44b5-b5e7-475bf033a03a)
-
+![swagger_ui](https://github.com/user-attachments/assets/b4868b25-edc3-40a4-8340-c4f39a6378b1)
 
 ---
 
