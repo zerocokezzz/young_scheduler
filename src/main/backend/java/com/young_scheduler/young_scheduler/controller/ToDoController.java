@@ -11,11 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-<<<<<<< HEAD:src/main/java/com/young_scheduler/young_scheduler/controller/ToDoController.java
-@RequestMapping("/todo") // API 엔드포인트를 명확히 정의
-=======
 @RequestMapping("/api/todo")
->>>>>>> main:src/main/backend/java/com/young_scheduler/young_scheduler/controller/ToDoController.java
 public class ToDoController {
 
     @Autowired
