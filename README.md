@@ -25,12 +25,12 @@
 
 ## 기술 스택
 
-| **Back-end**    | **Version** | **Front-end** | **Version** |
-|-----------------|-------------|---------------|-------------|
-| Spring Boot     | 3.3.7       | React         | 18.2.0      |
-| Java            | 17          | Axios         | 1.7.9       |
-| JPA             |             | Bootstrap     | 5.3.3       |
-| DB              |        |        MySQL       |             |
+| back-end  | ver    | front-end  | ver    |
+|-----------|--------|------------|--------|
+| SpringBoot | 3.3.7  | React      | 18.2.0 |
+| Java       | 17     | Axios      | 1.7.9  |
+| JPA        |        | Bootstrap  | 5.3.3  |
+| <td colspan="2">DB</td> |        | <td colspan="2">MySQL</td> |
 
 ---
 
