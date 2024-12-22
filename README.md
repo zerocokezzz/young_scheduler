@@ -14,6 +14,11 @@
 - **ToDo 생성/수정/삭제:** 사용자는 새로운 할 일을 추가하거나, 기존 할 일을 수정 및 삭제할 수 있습니다.
 - **날짜별 일정 확인:** 달력에서 각 날짜에 대한 일정을 확인하고, 상세 보기 및 삭제가 가능합니다.
 - **기본적인 CRUD 기능:** 일정 데이터는 백엔드에서 관리되며, **React**와 **Spring Boot**를 사용하여 프론트엔드와 백엔드를 분리하여 개발하였습니다.
+![웹_list](https://github.com/user-attachments/assets/73da1e6d-2397-4228-a543-842152ba3a37)
+![웹_일자별](https://github.com/user-attachments/assets/5289892f-08b5-4b3e-a610-bf3614c2848f)
+![웹_다음달](https://github.com/user-attachments/assets/1389c720-08b8-48fe-9e1d-420b80ddd77b)
+![웹_create](https://github.com/user-attachments/assets/2febb42f-8655-4785-9a17-d2455e3b4776)
+
 
 ---
 
@@ -66,6 +71,9 @@ Swagger UI를 통해 [http://localhost:8080/swagger-ui/index.html](http://localh
 - **DELETE /api/todo/{id}**: 특정 ID에 해당하는 할 일을 삭제합니다.
 - **GET /api/todo**: 모든 할 일 목록을 반환합니다.
 - **GET /api/todo/count**: 특정 월의 날짜별 할 일 개수를 반환합니다.
+
+![swagger_ui](https://github.com/user-attachments/assets/68f63dfa-7785-44b5-b5e7-475bf033a03a)
+
 
 ---
 
