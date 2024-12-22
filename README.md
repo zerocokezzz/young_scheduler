@@ -40,6 +40,7 @@
 2. 소스를 다운받아 압축을 풀고, **IDE**에서 프로젝트를 엽니다.
 3. 애플리케이션을 실행합니다.
 4. 정상적으로 실행되면 [http://localhost:8080](http://localhost:8080)에서 API 서버를 확인할 수 있습니다.
+5. DB는 프로젝트 > src > main > db > young_scheduler_db_backup.sql 참고
 
 ---
 
